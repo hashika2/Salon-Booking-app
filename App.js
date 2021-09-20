@@ -9,22 +9,26 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Store from './components/store/Store';
 import StackHeader from './util/StackHeader';
+import Styling from './components/store/Styling';
+import DateSelect from './components/booking/DateSelect';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return ( <NavigationContainer>
       <Stack.Navigator initialRouteName="Home"
-        headerMode="screen"
-        screenOptions={{
-          header:({scene,navigation})=>(
-            <StackHeader scene={scene} navigation={navigation}/>
-          )
-        }}
+        // headerMode="screen"
+        // screenOptions={{
+        //   header:({scene,navigation})=>(
+        //     <StackHeader scene={scene} navigation={navigation}/>
+        //   )
+        // }}
       >
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home}  options={{ title: '' }}/>
+        <Stack.Screen name="Login" component={Login}  options={{ title: '' }}/>
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Store" component={Store} />
+        <Stack.Screen name="Styling" component={Styling}  options={{ title: 'Styling' }}/>
+        <Stack.Screen name="DateSelect" component={DateSelect}  options={{ title: 'Confirm Booking' }}/>
       </Stack.Navigator>
     </NavigationContainer>)
 }
